@@ -12,3 +12,11 @@ function getText() {
 }
 
 getText();
+
+function noteUniqueIdentifier() {
+  ID.reset()
+  var note = new Note("this is a test")
+  assert.isTrue(note.id === 0)
+}
+
+noteUniqueIdentifier();
