@@ -1,11 +1,3 @@
-// var noteList;
-// var note;
-//
-// beforeEach(function () {
-//   noteList = new NoteList();
-//   note = new Note("Favourite drink: seltzer");
-// })
-
 function testNoteListInstatiated() {
   var noteList = new NoteList();
   assert.isTrue(noteList.list.length === 0)
@@ -24,9 +16,9 @@ addNote();
 
 function getList() {
   var noteList = new NoteList();
-  note = new Note("Favourite drink: seltzer");
-  noteList.addNote(note)
-  assert.isTrue(noteList.getList() === "Favourite drink: seltzer")
+  noteList.addNote("Favourite drink: seltzer")
+  var note = noteList.getList()
+  assert.isTrue(note.getText() === "Favourite drink: seltzer")
 }
 
 getList();

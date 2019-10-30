@@ -11,37 +11,19 @@ testingNoteControllerCreatesNoteList()
 
 function testInnerHTML() {
   var elementDouble = {
-    innerHTML: "pish"
+    innerHTML: "app"
   }
   var documentDouble = {
     getElementById: function() {
       return elementDouble
     }
   }
+
   noteList = new NoteList
   noteList.addNote("pish")
   controller = new NoteController(noteList)
-  assert.isTrue(controller.displayHTML()==="<ul><li>pish</li></ul>")
+  assert.isTrue(controller.displayHTML(documentDouble)==="<ul><li><div>pish</div></li></ul>")
+
  };
- 
+
  testInnerHTML()
-// function testingNoteAddedtoNoteList() {
-//   function NoteListDouble() {};
-//   NoteListDouble.prototype = {
-//     addNote: function() {}
-//   };
-//   var noteListDouble = new NoteListDouble
-//
-//   noteListDouble.addNote = function() {
-//     this.noteList.push("test string")
-//   }
-//
-//   var noteController = new NoteController(noteListDouble)
-//   assert.isTrue(noteController.noteList.includes("test string"))
-// }
-//
-// testingNoteAddedtoNoteList();
-//
-// NoteListDouble.prototype = {
-//   addNote: function() {};
-// };

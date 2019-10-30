@@ -8,13 +8,11 @@ function noteListView() {
 noteListView();
 
 function getHTML() {
-  var note = new Note("Favourite Drink: Pepsi")
-  var note2 = new Note("Favourite Food: Spaghetti Bolognese")
   var noteList = new NoteList();
   var noteListView = new NoteListView(noteList);
 
-  noteList.addNote(note)
-  noteList.addNote(note2)
+  noteList.addNote("Favourite Drink: Pepsi")
+  noteList.addNote("Favourite Food: Spaghetti Bolognese")
 
   assert.isTrue(noteListView.getHTML() === "<ul><li><div>Favourite Drink: Pepsi</div></li><li><div>Favourite Food: Spaghetti Bolognese</div></li></ul>")
 }
@@ -22,11 +20,10 @@ function getHTML() {
 getHTML();
 
 function singleNoteList() {
-  var note = new Note("Favourite Drink: Pepsi")
   var noteList = new NoteList();
   var noteListView = new NoteListView(noteList);
 
-  noteList.addNote(note)
+  noteList.addNote("Favourite Drink: Pepsi")
 
   assert.isTrue(noteListView.getHTML() === "<ul><li><div>Favourite Drink: Pepsi</div></li></ul>")
 }

@@ -27,6 +27,13 @@
 (function(exports) {
   function NoteController(noteList = new NoteList) {
     this.noteList = noteList
+    // this.note = this.noteList.addNote("Favourite drink: seltzer")
+    this.noteListView = new NoteListView(this.noteList)
   }
+
+  NoteController.prototype.displayHTML = function(doc = document) {
+    return doc.getElementById("app").innerHTML = this.noteListView.getHTML()
+  }
+
   exports.NoteController = NoteController;
 })(this)
