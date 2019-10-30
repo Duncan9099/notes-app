@@ -14,7 +14,7 @@ function getHTML() {
   noteList.addNote("Favourite Drink: Pepsi")
   noteList.addNote("Favourite Food: Spaghetti Bolognese")
 
-  assert.isTrue(noteListView.getHTML() === "<ul><li><div>Favourite Drink: Pepsi</div></li><li><div>Favourite Food: Spaghetti Bolognese</div></li></ul>")
+  assert.isTrue(noteListView.getHTML() === "<ul><li><div>Favourite Drink: Pep</div></li><li><div>Favourite Food: Spag</div></li></ul>")
 }
 
 getHTML();
@@ -25,7 +25,7 @@ function singleNoteList() {
 
   noteList.addNote("Favourite Drink: Pepsi")
 
-  assert.isTrue(noteListView.getHTML() === "<ul><li><div>Favourite Drink: Pepsi</div></li></ul>")
+  assert.isTrue(noteListView.getHTML() === "<ul><li><div>Favourite Drink: Pep</div></li></ul>")
 }
 
 singleNoteList();
