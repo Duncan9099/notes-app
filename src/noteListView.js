@@ -2,25 +2,20 @@
   function NoteListView(noteList) {
     this.noteList = noteList
   }
+  var noteList = new NoteList
+  var noteListView = new NoteListView(noteList)
 
   NoteListView.prototype.getHTML = function() {
-    var notes = this.noteList.list.map(getNote)
-    return '<ul><li><div>' + notes.join('</div></li><li><div>') + '</div></li></ul>'
+    var stringHTML = '<ul>'
+    this.noteList.getList().forEach( function(note) {
+      stringHTML += '<li><div><a href=#notes/' + note.id + ">" + note.getText().substring(0, 20) + '</a></div></li>'
+    })
+    return stringHTML + '</ul>'
   }
 
-  function getNote(note) {
-    return note.getText().substr(0, 20)
+  NoteListView.prototype.getById = function(id) {
+    return this.noteList.getList()[id]
   }
 
   exports.NoteListView = NoteListView;
 })(this);
-
-
-// NoteListView.prototype.getHTML = function() {
-//   var notes = this.noteList.list.map(getNote)
-//   return '<ul><li><div>' + notes.join('</div></li><li><div>') + '</div></li></ul>'
-// }
-//
-// function getNote(note) {
-//   return note.getText()
-// }

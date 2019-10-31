@@ -9,9 +9,7 @@
   }
 
   NoteList.prototype.getList = function() {
-    for(let i = 0; i < (this.list.length); i++) {
-      return this.list[i]
-    }
+    return this.list
   }
 
   exports.NoteList = NoteList;
