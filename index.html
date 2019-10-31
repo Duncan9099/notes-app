@@ -6,7 +6,11 @@
   </head>
   <body>
     <div id="app">Hello</div>
-    <div id="note"></div>
+    <form id="text" action="#notes/new" method="post">
+      <label>New Note</label><br>
+      <textarea name="note" rows="8" cols="40"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
   </body>
   <script src="src/noteModel.js"></script>
   <script src="src/noteListModel.js"></script>
