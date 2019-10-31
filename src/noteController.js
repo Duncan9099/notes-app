@@ -53,9 +53,9 @@
   //   document.getElementsbyId("note").innerHTML = note.getText()
   // }
 
-  makeUrlChangeShowAnimalForCurrentPage();
+  makeUrlChangeShowNoteForCurrentPage();
 
-  function makeUrlChangeShowAnimalForCurrentPage() {
+  function makeUrlChangeShowNoteForCurrentPage() {
     window.addEventListener("hashchange", showNoteForCurrentPage);
   };
 

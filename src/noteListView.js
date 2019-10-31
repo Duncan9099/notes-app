@@ -2,8 +2,6 @@
   function NoteListView(noteList) {
     this.noteList = noteList
   }
-  var noteList = new NoteList
-  var noteListView = new NoteListView(noteList)
 
   NoteListView.prototype.getHTML = function() {
     var stringHTML = '<ul>'
