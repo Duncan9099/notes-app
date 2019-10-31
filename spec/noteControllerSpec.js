@@ -1,14 +1,3 @@
-function testingNoteControllerCreatesNoteList() {
-  function NoteListDouble() {};
-  NoteListDouble.prototype = {
-    addNote: function() {}
-  };
-  var newNoteList = new NoteListDouble()
-  var noteController = new NoteController(newNoteList)
-  assert.isTrue(noteController.noteList === newNoteList)
-}
-testingNoteControllerCreatesNoteList()
-
 function testInnerHTML() {
   var elementDouble = {
     innerHTML: "app"
@@ -21,7 +10,8 @@ function testInnerHTML() {
 
   noteList = new NoteList
   noteList.addNote("pish")
-  controller = new NoteController(noteList)
+  noteListView = new NoteListView(noteList)
+  controller = new NoteController(noteListView)
   assert.isTrue(controller.displayHTML(documentDouble)==="<ul><li><div>pish</div></li></ul>")
 
  };

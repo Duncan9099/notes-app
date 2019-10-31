@@ -15,9 +15,10 @@ function addNote() {
 addNote();
 
 function getList() {
+  ID.reset
   var noteList = new NoteList();
   noteList.addNote("Favourite drink: seltzer")
-  var note = noteList.getList()
+  var note = noteList.getList()[0]
   assert.isTrue(note.getText() === "Favourite drink: seltzer")
 }
 

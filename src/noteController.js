@@ -1,6 +1,6 @@
-
 (function(exports) {
   function NoteController(noteListView) {
+    var noteListView = noteListView
     this.noteListView = noteListView
     this.displayHTML()
 
@@ -30,7 +30,12 @@
     function addNote() {
       document.getElementById("text").addEventListener("submit", function(submit) {
         submit.preventDefault();
-        console.log(submit)
+        note = submit.target[0].value
+        noteListView.noteList.addNote(note)
+
+        console.log(NoteController.constructor.displayHTML())
+
+        // return document.getElementById("app").innerHTML = noteListView.getHTML()
       })
     }
   }
