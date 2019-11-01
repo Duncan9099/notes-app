@@ -15,5 +15,9 @@
     return this.noteList.getList()[id]
   }
 
+  NoteListView.prototype.backButton = function() {
+    return '<form id="back" action="/" method="post"><input type="submit" name="back" value="Back"></form>'
+  }
+
   exports.NoteListView = NoteListView;
 })(this);

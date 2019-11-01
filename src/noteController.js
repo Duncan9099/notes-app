@@ -21,10 +21,7 @@
     };
 
     function showNote(noteID) {
-      console.log(this)
-      document
-        .getElementById("app")
-        .innerHTML = this.noteListView.getById(noteID).text
+      document.getElementById("app").innerHTML = this.noteListView.getById(noteID).text + this.noteListView.backButton()
     };
 
     function addNote() {
@@ -33,15 +30,14 @@
         note = submit.target[0].value
         noteListView.noteList.addNote(note)
 
-        console.log(NoteController.constructor.displayHTML())
-
-        // return document.getElementById("app").innerHTML = noteListView.getHTML()
+        document.getElementById("app").innerHTML = noteListView.getHTML()
+        document.getElementById("textarea").value = "";
       })
     }
   }
 
   NoteController.prototype.displayHTML = function(doc = document) {
-    return doc.getElementById("app").innerHTML = this.noteListView.getHTML()
+    doc.getElementById("app").innerHTML = this.noteListView.getHTML()
   }
 
   exports.NoteController = NoteController;
